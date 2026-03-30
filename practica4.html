@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitio Rosa Desplegable</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --rosa-pastel: #ffe3ec;
+            --rosa-fuerte: #ff007f;
+            --rosa-fuerte-hover: #e60072;
+            --texto-oscuro: #5a1a31;
+        }
+
+        body {
+            background-color: #fffafc;
+            color: var(--texto-oscuro);
+        }
+
+        /* Navbar Superior */
+        .navbar-custom {
+            background-color: var(--rosa-pastel) !important;
+            border-bottom: 2px solid var(--rosa-fuerte);
+        }
+
+        /* Botón de Menú (Hambuguesa) */
+        .btn-menu {
+            background-color: var(--rosa-fuerte);
+            color: white;
+            border: none;
+        }
+        
+        .btn-menu:hover {
+            background-color: var(--rosa-fuerte-hover);
+            color: white;
+        }
+
+        /* Estilos del Menú Desplegable (Offcanvas) */
+        .offcanvas-custom {
+            background-color: var(--rosa-fuerte) !important;
+            color: white !important;
+            width: 280px !important;
+        }
+
+        .offcanvas-custom .nav-link {
+            color: white !important;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+        }
+
+        .offcanvas-custom .nav-link:hover {
+            background-color: var(--rosa-fuerte-hover);
+        }
+
+        .offcanvas-custom .nav-link.active {
+            background-color: var(--rosa-pastel) !important;
+            color: var(--texto-oscuro) !important;
+            font-weight: bold;
+        }
+
+        .offcanvas-header {
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Botón de cerrar (X) */
+        .btn-close-white {
+            filter: brightness(0) invert(1);
+        }
+
+        .hero-section {
+            padding-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-custom sticky-top">
+        <div class="container-fluid">
+            <button class="btn btn-menu d-flex align-items-center gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
+                <span class="fs-4">☰</span> <span>Menú</span>
+            </button>
+
+            <ul class="nav nav-pills d-none d-md-flex">
+                <li class="nav-item"><a href="#" class="nav-link active" style="background-color: var(--rosa-fuerte);">Inicio</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" style="color: var(--texto-oscuro);">Características</a></li>
+                <li class="nav-item"><a href="#" class="nav-link" style="color: var(--texto-oscuro);">Precios</a></li>
+            </ul>
+            
+            <div style="width: 80px;"></div> </div>
+    </nav>
+
+    <div class="offcanvas offcanvas-start offcanvas-custom" tabindex="-1" id="menuLateral" aria-labelledby="menuLateralLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="menuLateralLabel">Sidebar Rosa</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body p-0">
+            <ul class="nav nav-pills flex-column mt-3">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">Home</a>
+                </li>
+                <li><a href="#" class="nav-link">Dashboard</a></li>
+                <li><a href="#" class="nav-link">Orders</a></li>
+                <li><a href="#" class="nav-link">Products</a></li>
+                <li><a href="#" class="nav-link">Customers</a></li>
+            </ul>
+            
+            <div class="mt-auto p-3 border-top border-secondary">
+                <div class="d-flex align-items-center">
+                    <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2 border border-white">
+                    <strong>Usuario Rosa</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center hero-section">
+        <h1 class="display-3 fw-bold" style="color: var(--rosa-fuerte);">Bienvenido a mi sitio</h1>
+        <p class="lead">Haz clic en el botón <b>"Menú"</b> de arriba a la izquierda para ver el sidebar desplegable.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
